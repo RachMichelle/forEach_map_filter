@@ -53,3 +53,67 @@ function vowelCount(str){
     })
     return vowels;
 }
+
+// map 
+
+function doubleValuesWithMap (arr){
+   return arr.map(function(val){
+       return val*2;
+    })
+}
+
+function valTimesIndex(arr){
+    return arr.map(function(val, i){
+        return val * i;
+    })
+}
+
+function extractKey(arr, key){
+    return arr.map(function (val){
+        return val[key];
+    })
+}
+
+function extractFullName(arr){
+    return arr.map(function(val){
+        return val.first + ' ' + val.last;
+    })
+}
+
+// filter
+
+function filterByValue (arr, condition){
+    return arr.filter(function(val){
+        return val[condition] !== undefined;
+    })
+}
+
+function find (arr, value){
+    return arr.filter(function(val){
+       return val === value;
+    }) [0];
+}
+
+function findInObj (arr, key, value){
+    return arr.filter(function(val){
+        return val[key] === value;
+    }) [0];
+}
+
+function removeVowels(str){
+    const vowels = 'aeiou';
+    let lowerCaseArr = str.toLowerCase().split('');
+    return lowerCaseArr.filter(function(letter){
+        return vowels.indexOf(letter) === -1;
+    }).join("");
+}
+
+function doubleOddNumbers(arr){
+    return arr
+    .filter(function(val){
+        return val % 2 !== 0;
+    })
+    .map(function(val){
+        return val*2;
+    })
+}
